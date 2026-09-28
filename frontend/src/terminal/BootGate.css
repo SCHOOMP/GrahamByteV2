@@ -1,0 +1,77 @@
+.boot-gate {
+  position: relative;
+  z-index: var(--z-base);
+  height: 100vh;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+.boot-log {
+  flex: 1;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+
+.boot-log .line {
+  line-height: 1.5;
+  color: var(--color-ink-2);
+}
+
+.boot-password-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding-top: var(--space-xs);
+  flex-wrap: wrap;
+  color: var(--color-ink);
+  font-weight: 700;
+}
+
+.boot-password-input-row {
+  display: inline-flex;
+  align-items: center;
+}
+
+.boot-password-input {
+  background: transparent;
+  border: none;
+  color: var(--color-ink);
+  font: inherit;
+  font-family: inherit;
+  font-weight: 700;
+  caret-color: var(--color-ink);
+  width: 12ch;
+}
+
+.boot-password-input:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Caret blink — the one motion exception the Terminal theme allows:
+   it sits at the end of a typed-command line, marking "you'd type next".
+   See microinteractions.md § Caret blink. */
+.cursor {
+  display: inline-block;
+  width: 1ch;
+  height: 1.1em;
+  background: var(--color-ink);
+  margin-left: var(--space-3xs);
+  animation: blink 1s steps(2) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+  }
+}

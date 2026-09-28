@@ -1,0 +1,53 @@
+/* Hallmark · route: custom (tuned) · target: app-shell redesign (boot gate + desktop), no marketing macrostructure
+ * theme: custom · vibe: "retro Fallout-terminal, phosphor CRT, ROBCO boot log" · paper: oklch(13% 0.014 150) · accent: oklch(80% 0.19 150)
+ * display: Space Mono 700 · body: Space Mono 400 · axes: dark / mono / chromatic-phosphor (~150°)
+ * studied: no · context: explicit · motion: none (Terminal duration-scale 0×, per microinteractions.md theme table)
+ */
+
+:root {
+  /* Colour — single-hue monochrome CRT palette (deliberate exception to
+     "tint neutrals toward anchor" — ink itself IS the phosphor hue, per
+     typography.md's single-font/single-hue terminal-aesthetic allowance) */
+  --color-paper: oklch(13% 0.014 150);
+  --color-paper-2: oklch(17% 0.016 150);
+  --color-paper-3: oklch(21% 0.018 150);
+
+  --color-ink: oklch(88% 0.09 150);
+  --color-ink-2: oklch(68% 0.07 150);
+
+  --color-rule: oklch(42% 0.05 150);
+  --color-rule-2: oklch(32% 0.04 150);
+  --color-muted: oklch(52% 0.045 150);
+
+  --color-accent: oklch(80% 0.19 150);
+  --color-accent-ink: oklch(13% 0.014 150);
+  --color-focus: oklch(85% 0.21 150);
+
+  /* Secondary accent — amber, for error/warning text. Kept as a distinct
+     hue (not a second green) so error states never rely on colour alone,
+     and never fall into the red/green-only pairing ban. */
+  --color-warn: oklch(76% 0.16 70);
+  --color-warn-ink: oklch(14% 0.02 70);
+
+  /* Type — single family by design (a true terminal aesthetic is
+     monospace-everywhere on purpose, per typography.md). Weight contrast
+     (400/700) carries the hierarchy a second face would otherwise carry. */
+  --font-mono: 'Space Mono', ui-monospace, 'SF Mono', Consolas, monospace;
+
+  /* Space — 4pt scale */
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+
+  /* Z-index — named levels. --z-scanline sits above everything: it's the
+     CRT glass, and the glass is always in front of the picture tube. */
+  --z-base: 1;
+  --z-raised: 10;
+  --z-modal: 400;
+  --z-scanline: 900;
+}

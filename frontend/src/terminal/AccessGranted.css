@@ -1,0 +1,20 @@
+.access-granted {
+  position: relative;
+  z-index: var(--z-base);
+  height: 100vh;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-lg);
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  white-space: pre-wrap;
+  color: var(--color-ink-2);
+}
+
+.access-granted .line {
+  line-height: 1.5;
+}
+
+.access-granted .line--emphasis {
+  color: var(--color-ink);
+  font-weight: 700;
+}

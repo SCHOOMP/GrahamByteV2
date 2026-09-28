@@ -44,3 +44,8 @@ Thumbs.db
 ### Env ###
 .env
 .env.local
+
+### Local AI tool configs (skills, agent installs) ###
+.claude/
+.agents/
+skills-lock.json
