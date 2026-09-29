@@ -36,11 +36,21 @@ export function BootGate({ onSubmit, isChecking }: BootGateProps) {
   return (
     <div className="boot-gate">
       <div className="boot-log">
-        {BOOT_LINES.slice(0, visibleCount).map((line, index) => (
-          <div key={index} className="line">
-            {line.text || ' '}
-          </div>
-        ))}
+        {BOOT_LINES.slice(0, visibleCount).map((line, index) => {
+          const isOk = line.text.endsWith('OK');
+          return (
+            <div key={index} className="line">
+              {isOk ? (
+                <>
+                  {line.text.slice(0, -2)}
+                  <span className="boot-ok">OK</span>
+                </>
+              ) : (
+                line.text || ' '
+              )}
+            </div>
+          );
+        })}
       </div>
       {booted && (
         <form className="boot-password-row" onSubmit={handleSubmit}>

@@ -26,7 +26,10 @@ export function Window({ title, onClose, children }: WindowProps) {
     <div className="window-overlay" role="dialog" aria-modal="true" aria-label={title}>
       <div className="window">
         <div className="window-titlebar">
-          <span className="window-title">{title}</span>
+          <span className="window-title">
+            <span className="window-title-dot" aria-hidden="true" />
+            {title}
+          </span>
           <button
             ref={closeButtonRef}
             className="window-close"

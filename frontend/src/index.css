@@ -74,8 +74,14 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
-h2,
+h2 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin: var(--space-md) 0 var(--space-2xs);
+}
+
 h3 {
+  font-size: var(--text-md);
   font-weight: 700;
   margin: var(--space-md) 0 var(--space-2xs);
 }

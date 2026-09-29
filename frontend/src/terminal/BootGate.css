@@ -7,7 +7,7 @@
   padding: var(--space-lg);
   display: flex;
   flex-direction: column;
-  font-size: clamp(0.875rem, 2vw, 1rem);
+  font-size: clamp(var(--text-sm), 2vw, var(--text-base));
 }
 
 .boot-log {
@@ -19,6 +19,13 @@
 .boot-log .line {
   line-height: 1.5;
   color: var(--color-ink-2);
+}
+
+/* A status check passing gets to be the brightest thing on the line —
+   the same convention as a real boot log's green "OK". */
+.boot-ok {
+  color: var(--color-accent);
+  font-weight: 700;
 }
 
 .boot-password-row {
