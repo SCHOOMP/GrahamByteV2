@@ -26,9 +26,21 @@
 }
 
 .window-title {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--text-md);
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--color-ink);
+}
+
+.window-title-dot {
+  width: 0.5em;
+  height: 0.5em;
+  background: var(--color-accent);
+  box-shadow: 0 0 6px color-mix(in oklch, var(--color-accent) 70%, transparent);
+  flex: none;
 }
 
 .window-close {
@@ -65,6 +77,7 @@
 .window-content {
   padding: var(--space-md);
   overflow-y: auto;
+  font-size: var(--text-base);
   color: var(--color-ink-2);
 }
 
@@ -101,7 +114,7 @@
 .devlog-date {
   color: var(--color-muted);
   font-weight: 400;
-  font-size: 0.85em;
+  font-size: var(--text-xs);
 }
 
 .devlog-entry-title {
@@ -112,7 +125,7 @@
 
 .devlog-commits {
   color: var(--color-muted);
-  font-size: 0.85em;
+  font-size: var(--text-xs);
   text-align: right;
   margin: 0;
 }

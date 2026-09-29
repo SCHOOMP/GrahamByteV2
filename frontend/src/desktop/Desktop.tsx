@@ -3,6 +3,7 @@ import { ComingSoonWindow } from './windows/ComingSoonWindow';
 import { ContactWindow } from './windows/ContactWindow';
 import { DevLogWindow } from './windows/DevLogWindow';
 import { ResumeWindow } from './windows/ResumeWindow';
+import { DesktopStatusBar } from './DesktopStatusBar';
 import { PixelIcon, type PixelIconName } from './PixelIcon';
 import './Desktop.css';
 
@@ -80,6 +81,8 @@ export function Desktop() {
       {openIcon?.comingSoon && (
         <ComingSoonWindow title={openIcon.label} message={openIcon.comingSoon} onClose={close} />
       )}
+
+      <DesktopStatusBar />
     </div>
   );
 }
