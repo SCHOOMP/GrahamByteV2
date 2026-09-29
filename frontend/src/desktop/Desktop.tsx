@@ -1,5 +1,7 @@
 import { useRef, useState } from 'react';
 import { ComingSoonWindow } from './windows/ComingSoonWindow';
+import { ContactWindow } from './windows/ContactWindow';
+import { DevLogWindow } from './windows/DevLogWindow';
 import { ResumeWindow } from './windows/ResumeWindow';
 import { PixelIcon, type PixelIconName } from './PixelIcon';
 import './Desktop.css';
@@ -38,18 +40,8 @@ const ICONS: IconDef[] = [
     glyph: 'architecture',
     comingSoon: 'COMING SOON — system diagram and architecture decision records',
   },
-  {
-    id: 'devlog',
-    label: 'DEV LOG',
-    glyph: 'devlog',
-    comingSoon: "COMING SOON — changelog of what's shipped and what's next",
-  },
-  {
-    id: 'contact',
-    label: 'CONTACT',
-    glyph: 'contact',
-    comingSoon: 'COMING SOON — email, GitHub, LinkedIn',
-  },
+  { id: 'devlog', label: 'DEV LOG', glyph: 'devlog' },
+  { id: 'contact', label: 'CONTACT', glyph: 'contact' },
   { id: 'personality', label: '???', glyph: 'locked', comingSoon: 'COMING SOON — details TBD' },
 ];
 
@@ -83,6 +75,8 @@ export function Desktop() {
       </div>
 
       {openId === 'resume' && <ResumeWindow onClose={close} />}
+      {openId === 'contact' && <ContactWindow onClose={close} />}
+      {openId === 'devlog' && <DevLogWindow onClose={close} />}
       {openIcon?.comingSoon && (
         <ComingSoonWindow title={openIcon.label} message={openIcon.comingSoon} onClose={close} />
       )}
