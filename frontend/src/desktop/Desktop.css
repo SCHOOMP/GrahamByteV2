@@ -5,11 +5,16 @@
   padding: var(--space-xl);
 }
 
+/* Icons fill top-to-bottom, then wrap into a new column when the
+   viewport runs out of height — like a real desktop. */
 .desktop-icons {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(auto-fill, 8.5rem);
+  gap: var(--space-xs) var(--space-md);
+  height: 100%;
   width: fit-content;
+  align-content: start;
 }
 
 .desktop-icon {
@@ -22,7 +27,6 @@
   border: none;
   color: var(--color-ink);
   font: inherit;
-  font-family: inherit;
   cursor: pointer;
   padding: var(--space-xs);
 }
@@ -31,28 +35,43 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  color: var(--color-ink);
+  /* Phosphor bloom — the icon glows like a lit CRT pixel */
+  filter: drop-shadow(0 0 3px color-mix(in oklch, var(--color-accent) 55%, transparent));
+}
+
+.pixel-icon {
   width: 3rem;
   height: 3rem;
-  font-size: 1.75rem;
-  font-weight: 700;
-  border: 2px solid var(--color-rule);
-  color: var(--color-ink);
 }
 
 .desktop-icon-label {
   font-size: 0.75rem;
   text-align: center;
+  padding: 0 var(--space-3xs);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .desktop-icon:hover .desktop-icon-glyph {
-    border-color: var(--color-accent);
     color: var(--color-accent);
+    filter: drop-shadow(0 0 6px color-mix(in oklch, var(--color-accent) 80%, transparent));
+  }
+
+  .desktop-icon:hover .desktop-icon-label {
+    background: var(--color-accent);
+    color: var(--color-accent-ink);
   }
 }
 
+.desktop-icon:focus-visible .desktop-icon-label {
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+}
+
 .desktop-icon:active .desktop-icon-glyph {
-  background: var(--color-paper-2);
+  color: var(--color-ink-2);
 }
 
 .desktop-icon:focus-visible {

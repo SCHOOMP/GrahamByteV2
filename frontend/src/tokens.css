@@ -1,5 +1,5 @@
 /* Hallmark · route: custom (tuned) · target: app-shell redesign (boot gate + desktop), no marketing macrostructure
- * theme: custom · vibe: "retro Fallout-terminal, phosphor CRT, ROBCO boot log" · paper: oklch(13% 0.014 150) · accent: oklch(80% 0.19 150)
+ * theme: custom · vibe: "retro Fallout-terminal, phosphor CRT, ROBCO boot log" · paper: oklch(13% 0.014 150) · accent: oklch(89% 0.24 148)
  * display: Space Mono 700 · body: Space Mono 400 · axes: dark / mono / chromatic-phosphor (~150°)
  * studied: no · context: explicit · motion: none (Terminal duration-scale 0×, per microinteractions.md theme table)
  */
@@ -12,16 +12,16 @@
   --color-paper-2: oklch(17% 0.016 150);
   --color-paper-3: oklch(21% 0.018 150);
 
-  --color-ink: oklch(88% 0.09 150);
-  --color-ink-2: oklch(68% 0.07 150);
+  --color-ink: oklch(88% 0.22 148);
+  --color-ink-2: oklch(72% 0.17 148);
 
-  --color-rule: oklch(42% 0.05 150);
-  --color-rule-2: oklch(32% 0.04 150);
-  --color-muted: oklch(52% 0.045 150);
+  --color-rule: oklch(55% 0.14 148);
+  --color-rule-2: oklch(38% 0.09 148);
+  --color-muted: oklch(62% 0.13 148);
 
-  --color-accent: oklch(80% 0.19 150);
+  --color-accent: oklch(89% 0.24 148);
   --color-accent-ink: oklch(13% 0.014 150);
-  --color-focus: oklch(85% 0.21 150);
+  --color-focus: oklch(93% 0.2 148);
 
   /* Secondary accent — amber, for error/warning text. Kept as a distinct
      hue (not a second green) so error states never rely on colour alone,
